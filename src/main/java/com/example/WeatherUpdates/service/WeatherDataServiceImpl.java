@@ -26,7 +26,7 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 	RestTemplate rs=new RestTemplate();
 
 	private String api_url="http://api.openweathermap.org/data/2.5/weather";
-	private String api_key="6a377fb194798a72c56f9119b5261d0a";
+	private String api_key="a1c596747ce1d063f6df34fd6fa77498";
 
 	private WeatherDataDto mapToWeatherData(WeatherApiResponse apiResponse,String city) {
 		String url = String.format("%s?q=%s&appid=%s", api_url, city, api_key);

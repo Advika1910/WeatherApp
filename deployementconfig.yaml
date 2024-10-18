@@ -70,6 +70,7 @@ Resources:
       Environment:
         Variables:
           TABLE_NAME: !Ref WeatherData
+          MY_AWS_REGION: 'us-east-1'
       Handler: com.example.WeatherUpdates.StreamLambdaHandler::handleRequest
       MemorySize: 1024
       Role: !GetAtt 

@@ -32,9 +32,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: Copy artifact to s3 bucket
-      run: aws s3 cp ./target/data-0.0.1-SNAPSHOT.jar s3://my-weather-data-bucket-1/
+      run: aws s3 cp ./target/WeatherDataAPP-0.0.1-SNAPSHOT.jar s3://my-weather-data-bucket-1/
     - name: Copy cloudtemplate to s3 bucket
-      run: aws s3 cp ./cloudformation-template.yaml s3://my-weather-data-bucket-1/
+      run: aws s3 cp ./deployementconfig.yaml s3://my-weather-data-bucket-1/
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -54,5 +54,5 @@ jobs:
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: weather-app-stack
-        template: https://my-first-latest-bucket.s3.amazonaws.com/cloudformation-template.yaml
+        template: https://my-weather-data-bucket-1.s3.amazonaws.com/deployementconfig.yaml
         no-fail-on-empty-changeset: "1"

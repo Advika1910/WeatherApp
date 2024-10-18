@@ -65,7 +65,7 @@ Resources:
     Type: 'AWS::Lambda::Function'
     Properties:
       Code:
-        S3Bucket: aws-case-study-bucket
+        S3Bucket: my-weather-data-bucket-1
         S3Key: WeatherDataAPP-0.0.1-SNAPSHOT.jar
       Environment:
         Variables:

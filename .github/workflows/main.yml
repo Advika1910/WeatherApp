@@ -55,4 +55,5 @@ jobs:
       with:
         name: weather-app-stack
         template: https://my-weather-data-bucket-1.s3.amazonaws.com/deployementconfig.yaml
+        capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: "1"
